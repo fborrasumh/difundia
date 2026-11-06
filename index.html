@@ -2518,6 +2518,13 @@ const perfilJSON = () => ({formato: PERFIL_FORMATO, version: 1, actualizado: new
 const perfilLleno = () => PERFIL_CAMPOS.filter(([k]) => (Array.isArray(S.perfil[k]) ? S.perfil[k].length : S.perfil[k])).length;
 
 /* ── estado ── */
+/* cifras que no están en el material. Corrige numerosNuevos de Forja, que leía «3.500» como 3,5 (y lo ignoraba por pequeño):
+   aquí «3.500», «3,500» y «3500» son la misma cifra; los decimales («2,5») se respetan. Se ignoran las cifras de 0 a 12. */
+const CIFRA_RX = /\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?|\d+(?:[.,]\d+)?/g;
+function cifraNorm(x) { const m = x.match(/^(\d{1,3}(?:[.,]\d{3})+)([.,]\d+)?$/); if (m) return m[1].replace(/[.,]/g, '') + (m[2] ? '.' + m[2].slice(1) : ''); return x.replace(',', '.'); }
+const cifrasDe = tx => new Set((String(tx).match(CIFRA_RX) || []).map(cifraNorm));
+function cifrasNuevas(texto, mat) { const m = cifrasDe(mat); return [...new Set((String(texto).match(CIFRA_RX) || []))].filter(x => { const n = cifraNorm(x); return !m.has(n) && parseFloat(n) > 12; }); }
+
 let S = {perfil: perfilVacio(), docs: [], idea: '', fecha: '', res: null, esEjemplo: false};
 let ENVIO_OK = false;
 /* datos personales: además de correo, DNI y teléfono (30-verify), el IBAN. Va primero para que el teléfono no se coma sus dígitos. */
@@ -2603,7 +2610,7 @@ function procesa(raw, st = S) {
   const pz = raw.piezas || {};
   const piezas = PIEZAS.map(([k]) => {
     const tx = String(pz[k] || '').replace(/\r/g, '').trim();
-    return {k, tx, lect: lang === 'es' ? legibilidad(tx) : null, chars: [...tx].length, estig: estigmas(tx, lang), enl: enlacesAjenos(tx, permit), cif: numerosNuevos(tx, mat + (k === 'canva' ? ' 1080 1920 1350' : '')), hue: huecos(tx)};
+    return {k, tx, lect: lang === 'es' ? legibilidad(tx) : null, chars: [...tx].length, estig: estigmas(tx, lang), enl: enlacesAjenos(tx, permit), cif: cifrasNuevas(tx, mat + (k === 'canva' ? ' 1080 1920 1350' : '')), hue: huecos(tx)};
   }).filter(p => p.tx);
   const fuentesN = st.perfil.fuentes.map(f => ({n: norm(f), d: dominio(f)}));
   const afirm = (raw.afirmaciones || []).map(a => {
@@ -2620,7 +2627,7 @@ function procesa(raw, st = S) {
   const rellenados = [];
   if (raw.perfil && typeof raw.perfil === 'object') ['nombre', 'ambito', 'territorio', 'mision', 'publicos', 'tono'].forEach(k => { const v = String(raw.perfil[k] || '').trim(); if (v && !st.perfil[k]) { st.perfil[k] = v; rellenados.push(k); } });
   const ca = raw.cartel && typeof raw.cartel === 'object' ? raw.cartel : {}, cartel = Object.fromEntries(['titulo', 'subtitulo', 'cuando', 'donde', 'accion'].map(k => [k, sinEmoji(String(ca[k] || '')).slice(0, 140)]));
-  const cartelCif = numerosNuevos(Object.values(cartel).join(' '), mat);
+  const cartelCif = cifrasNuevas(Object.values(cartel).join(' '), mat);
   return {titulo: String(raw.titulo || '').trim(), piezas, afirm, cal, cartel, cartelCif, conFecha: !!st.fecha, rellenados, lang, creado: new Date().toISOString()};
 }
 
