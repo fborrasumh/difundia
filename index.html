@@ -2833,7 +2833,7 @@ function pintaIdea() { $('idea').value = S.idea; $('fecha').value = S.fecha; $('
 /* ── inscripción online: se pega el enlace del formulario o se crea en Google con la aplicación web (FORM_APP) ──
    La aplicación web se ejecuta con la cuenta de Google de quien la usa: el formulario y sus respuestas quedan en SU Drive.
    Al terminar vuelve aquí con ?formulario=<enlace> (ver el arranque). Código: github.com/fborrasumh/propatiens, materiales/formulario_webapp */
-const FORM_APP = '';   // https://script.google.com/macros/s/…/exec · vacío = solo se puede pegar el enlace
+const FORM_APP = 'https://script.google.com/macros/s/AKfycbzaK_qLfHkkPsfDsVAgRp4QdUHmPQa1LCVdOsPugYYzVCicTNW0hLY0Ga1bChHN67z3Nw/exec';   // https://script.google.com/macros/s/…/exec · vacío = solo se puede pegar el enlace
 const ACT_CAMPOS = [['titulo', 'Nombre de la actividad', 'Taller de cocina para las fiestas'], ['cuando', 'Día y hora', 'Sábado 12 de diciembre, de 10:30 a 13:30'],
   ['donde', 'Lugar', 'Centro social, calle Mayor 22'], ['precio', 'Precio', 'Gratuito para socios; 5 € para no socios'], ['plazas', 'Plazas', '20'], ['hasta', 'Inscripción abierta hasta', 'Jueves 10 de diciembre']];
 const esEnlace = u => /^https:\/\/\S+$/i.test(String(u || '').trim());
