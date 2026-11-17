@@ -529,6 +529,7 @@ table{border-collapse:collapse;width:100%;font-size:13.8px}th{background:var(--p
     <div class="actions"><button class="btn btn-primary btn-big" id="btnCrea" type="button"><svg class="i"><use href="#i-sparkles"/></svg><span data-i18n="d.crear">Crear toda la comunicación</span></button></div>
     <p class="help" id="estado" role="status" aria-live="polite"></p>
   </div>
+  <div class="card" id="inscCard"></div>
 </section>
 
 <!-- 3 · LISTO -->
@@ -1348,6 +1349,32 @@ const csvDe = (cab, filas) => '\ufeff' + [cab, ...filas].map(f => f.map(csvq).jo
 /* Diccionarios de DifundIA (el español está en el HTML y en el JS). Generado desde tr_difundia.py. */
 const I18N = {
   "ca": {
+    "Correo de la asociación": "Correu de l'associació",
+    "Dirección (sede)": "Adreça (seu)",
+    "Calle…, localidad": "Carrer…, localitat",
+    "Inscripción online (opcional)": "Inscripció en línia (opcional)",
+    "Si hace falta inscribirse, pega el enlace del formulario (Google Forms u otro). Saldrá en todas las publicaciones y como código QR en las imágenes y el cartel.": "Si cal inscriure's, enganxa l'enllaç del formulari (Google Forms o un altre). Eixirà en totes les publicacions i com a codi QR en les imatges i el cartell.",
+    "Enlace de inscripción": "Enllaç d'inscripció",
+    "¿Aún no tienes formulario? Créalo en Google en un minuto": "Encara no tens formulari? Crea'l a Google en un minut",
+    "Trae las preguntas de inscripción, la cláusula de protección de datos y las autorizaciones de imagen y de comunicaciones. Se crea en tu cuenta de Google; la primera vez, Google te pedirá permiso.": "Porta les preguntes d'inscripció, la clàusula de protecció de dades i les autoritzacions d'imatge i de comunicacions. Es crea al teu compte de Google; la primera vegada, Google et demanarà permís.",
+    "Nombre de la actividad": "Nom de l'activitat",
+    "Taller de cocina para las fiestas": "Taller de cuina per a les festes",
+    "Día y hora": "Dia i hora",
+    "Sábado 12 de diciembre, de 10:30 a 13:30": "Dissabte 12 de desembre, de 10:30 a 13:30",
+    "Lugar": "Lloc",
+    "Centro social, calle Mayor 22": "Centre social, carrer Major 22",
+    "Precio": "Preu",
+    "Gratuito para socios; 5 € para no socios": "Gratuït per a socis; 5 € per a no socis",
+    "Plazas": "Places",
+    "Inscripción abierta hasta": "Inscripció oberta fins",
+    "Jueves 10 de diciembre": "Dijous 10 de desembre",
+    "Crear mi formulario en Google": "Crear el meu formulari a Google",
+    "El enlace debe empezar por https://": "L'enllaç ha de començar per https://",
+    "Escribe el nombre de la actividad.": "Escriu el nom de l'activitat.",
+    "Falta el nombre de la asociación en el perfil (paso Material).": "Falta el nom de l'associació al perfil (pas Material).",
+    "Escribe el correo de la asociación: lo necesita la cláusula de protección de datos.": "Escriu el correu de l'associació: el necessita la clàusula de protecció de dades.",
+    "Formulario creado y enlace guardado. Pulsa «Crear toda la comunicación» para que salga en los textos; en las imágenes ya sale el QR.": "Formulari creat i enllaç desat. Prem «Crear tota la comunicació» perquè isca als textos; a les imatges ja ix el QR.",
+    "Formulario creado: el enlace ya está en tu campaña.": "Formulari creat: l'enllaç ja és a la teua campanya.",
     "title": "DifundIA · La comunicació de la teua associació de pacients",
     "hero.eyebrow": "Comunicació per a associacions de pacients · Institut ProPatiens · Càtedra del Pacient UMH",
     "hero.h1": "Explica la teua idea. <em>DifundIA prepara tota la comunicació.</em>",
@@ -1546,6 +1573,32 @@ const I18N = {
     "Con el logo, los colores y el eslogan del perfil, la app dibuja la publicación cuadrada, la story, el cartel A4 y la cabecera del boletín (PNG), y maqueta el boletín y la nota de prensa (HTML y PDF). Todo se hace en este navegador, sin IA.": "Amb el logo, els colors i l'eslògan del perfil, l'app dibuixa la publicació quadrada, la story, el cartell A4 i la capçalera del butlletí (PNG), i maqueta el butlletí i la nota de premsa (HTML i PDF). Tot es fa en aquest navegador, sense IA."
   },
   "eu": {
+    "Correo de la asociación": "Elkartearen helbide elektronikoa",
+    "Dirección (sede)": "Helbidea (egoitza)",
+    "Calle…, localidad": "Kalea…, herria",
+    "Inscripción online (opcional)": "Izen-emate linean (aukerakoa)",
+    "Si hace falta inscribirse, pega el enlace del formulario (Google Forms u otro). Saldrá en todas las publicaciones y como código QR en las imágenes y el cartel.": "Izena eman behar bada, itsatsi formularioaren esteka (Google Forms edo beste bat). Argitalpen guztietan agertuko da, eta QR kode gisa irudietan eta kartelean.",
+    "Enlace de inscripción": "Izen-ematearen esteka",
+    "¿Aún no tienes formulario? Créalo en Google en un minuto": "Oraindik ez duzu formulariorik? Sortu Googlen minutu batean",
+    "Trae las preguntas de inscripción, la cláusula de protección de datos y las autorizaciones de imagen y de comunicaciones. Se crea en tu cuenta de Google; la primera vez, Google te pedirá permiso.": "Izen-ematearen galderak, datuen babeserako klausula eta irudi eta komunikazioetarako baimenak ditu. Zure Google kontuan sortzen da; lehen aldian, Googlek baimena eskatuko dizu.",
+    "Nombre de la actividad": "Jardueraren izena",
+    "Taller de cocina para las fiestas": "Jaietarako sukaldaritza-tailerra",
+    "Día y hora": "Eguna eta ordua",
+    "Sábado 12 de diciembre, de 10:30 a 13:30": "Abenduaren 12a, larunbata, 10:30etik 13:30era",
+    "Lugar": "Lekua",
+    "Centro social, calle Mayor 22": "Gizarte-etxea, Kale Nagusia 22",
+    "Precio": "Prezioa",
+    "Gratuito para socios; 5 € para no socios": "Doan bazkideentzat; 5 € bazkide ez direnentzat",
+    "Plazas": "Plazak",
+    "Inscripción abierta hasta": "Izen-ematea zabalik noiz arte",
+    "Jueves 10 de diciembre": "Abenduaren 10a, osteguna",
+    "Crear mi formulario en Google": "Sortu nire formularioa Googlen",
+    "El enlace debe empezar por https://": "Estekak https:// hasiera izan behar du",
+    "Escribe el nombre de la actividad.": "Idatzi jardueraren izena.",
+    "Falta el nombre de la asociación en el perfil (paso Material).": "Elkartearen izena falta da profilean (Materiala urratsa).",
+    "Escribe el correo de la asociación: lo necesita la cláusula de protección de datos.": "Idatzi elkartearen helbide elektronikoa: datuen babeserako klausulak behar du.",
+    "Formulario creado y enlace guardado. Pulsa «Crear toda la comunicación» para que salga en los textos; en las imágenes ya sale el QR.": "Formularioa sortuta eta esteka gordeta. Sakatu «Sortu komunikazio osoa» testuetan ager dadin; irudietan QRa agertzen da jada.",
+    "Formulario creado: el enlace ya está en tu campaña.": "Formularioa sortuta: esteka zure kanpainan dago jada.",
     "title": "DifundIA · Zure paziente elkartearen komunikazioa",
     "hero.eyebrow": "Paziente elkarteentzako komunikazioa · ProPatiens Institutua · UMHko Pazientearen Katedra",
     "hero.h1": "Kontatu zure ideia. <em>DifundIAk komunikazio osoa prestatzen du.</em>",
@@ -1744,6 +1797,32 @@ const I18N = {
     "Con el logo, los colores y el eslogan del perfil, la app dibuja la publicación cuadrada, la story, el cartel A4 y la cabecera del boletín (PNG), y maqueta el boletín y la nota de prensa (HTML y PDF). Todo se hace en este navegador, sin IA.": "Profileko logoarekin, koloreekin eta leloarekin, aplikazioak argitalpen karratua, storya, A4 kartela eta buletinaren goiburua marrazten ditu (PNG), eta buletina eta prentsa oharra diseinatzen ditu (HTML eta PDF). Dena nabigatzaile honetan egiten da, AArik gabe."
   },
   "gl": {
+    "Correo de la asociación": "Correo da asociación",
+    "Dirección (sede)": "Enderezo (sede)",
+    "Calle…, localidad": "Rúa…, localidade",
+    "Inscripción online (opcional)": "Inscrición en liña (opcional)",
+    "Si hace falta inscribirse, pega el enlace del formulario (Google Forms u otro). Saldrá en todas las publicaciones y como código QR en las imágenes y el cartel.": "Se cómpre inscribirse, pega a ligazón do formulario (Google Forms ou outro). Sairá en todas as publicacións e como código QR nas imaxes e no cartel.",
+    "Enlace de inscripción": "Ligazón de inscrición",
+    "¿Aún no tienes formulario? Créalo en Google en un minuto": "Aínda non tes formulario? Créao en Google nun minuto",
+    "Trae las preguntas de inscripción, la cláusula de protección de datos y las autorizaciones de imagen y de comunicaciones. Se crea en tu cuenta de Google; la primera vez, Google te pedirá permiso.": "Trae as preguntas de inscrición, a cláusula de protección de datos e as autorizacións de imaxe e de comunicacións. Créase na túa conta de Google; a primeira vez, Google pediráche permiso.",
+    "Nombre de la actividad": "Nome da actividade",
+    "Taller de cocina para las fiestas": "Obradoiro de cociña para as festas",
+    "Día y hora": "Día e hora",
+    "Sábado 12 de diciembre, de 10:30 a 13:30": "Sábado 12 de decembro, das 10:30 ás 13:30",
+    "Lugar": "Lugar",
+    "Centro social, calle Mayor 22": "Centro social, rúa Maior 22",
+    "Precio": "Prezo",
+    "Gratuito para socios; 5 € para no socios": "Gratuíto para socios; 5 € para non socios",
+    "Plazas": "Prazas",
+    "Inscripción abierta hasta": "Inscrición aberta ata",
+    "Jueves 10 de diciembre": "Xoves 10 de decembro",
+    "Crear mi formulario en Google": "Crear o meu formulario en Google",
+    "El enlace debe empezar por https://": "A ligazón debe comezar por https://",
+    "Escribe el nombre de la actividad.": "Escribe o nome da actividade.",
+    "Falta el nombre de la asociación en el perfil (paso Material).": "Falta o nome da asociación no perfil (paso Material).",
+    "Escribe el correo de la asociación: lo necesita la cláusula de protección de datos.": "Escribe o correo da asociación: precísao a cláusula de protección de datos.",
+    "Formulario creado y enlace guardado. Pulsa «Crear toda la comunicación» para que salga en los textos; en las imágenes ya sale el QR.": "Formulario creado e ligazón gardada. Preme «Crear toda a comunicación» para que saia nos textos; nas imaxes xa sae o QR.",
+    "Formulario creado: el enlace ya está en tu campaña.": "Formulario creado: a ligazón xa está na túa campaña.",
     "title": "DifundIA · A comunicación da túa asociación de pacientes",
     "hero.eyebrow": "Comunicación para asociacións de pacientes · Instituto ProPatiens · Cátedra do Paciente UMH",
     "hero.h1": "Conta a túa idea. <em>DifundIA prepara toda a comunicación.</em>",
@@ -1942,6 +2021,32 @@ const I18N = {
     "Con el logo, los colores y el eslogan del perfil, la app dibuja la publicación cuadrada, la story, el cartel A4 y la cabecera del boletín (PNG), y maqueta el boletín y la nota de prensa (HTML y PDF). Todo se hace en este navegador, sin IA.": "Co logo, as cores e o eslogan do perfil, a app debuxa a publicación cadrada, a story, o cartel A4 e a cabeceira do boletín (PNG), e maqueta o boletín e a nota de prensa (HTML e PDF). Todo se fai neste navegador, sen IA."
   },
   "en": {
+    "Correo de la asociación": "Association email",
+    "Dirección (sede)": "Address (head office)",
+    "Calle…, localidad": "Street…, town",
+    "Inscripción online (opcional)": "Online registration (optional)",
+    "Si hace falta inscribirse, pega el enlace del formulario (Google Forms u otro). Saldrá en todas las publicaciones y como código QR en las imágenes y el cartel.": "If people need to register, paste the form link (Google Forms or another). It will appear in every post and as a QR code in the images and the poster.",
+    "Enlace de inscripción": "Registration link",
+    "¿Aún no tienes formulario? Créalo en Google en un minuto": "No form yet? Create it in Google in a minute",
+    "Trae las preguntas de inscripción, la cláusula de protección de datos y las autorizaciones de imagen y de comunicaciones. Se crea en tu cuenta de Google; la primera vez, Google te pedirá permiso.": "It comes with the registration questions, the data protection notice and the image and communications consents. It is created in your Google account; the first time, Google will ask for permission.",
+    "Nombre de la actividad": "Name of the activity",
+    "Taller de cocina para las fiestas": "Holiday cooking workshop",
+    "Día y hora": "Day and time",
+    "Sábado 12 de diciembre, de 10:30 a 13:30": "Saturday 12 December, 10:30 to 13:30",
+    "Lugar": "Place",
+    "Centro social, calle Mayor 22": "Community centre, 22 High Street",
+    "Precio": "Price",
+    "Gratuito para socios; 5 € para no socios": "Free for members; €5 for non-members",
+    "Plazas": "Places",
+    "Inscripción abierta hasta": "Registration open until",
+    "Jueves 10 de diciembre": "Thursday 10 December",
+    "Crear mi formulario en Google": "Create my form in Google",
+    "El enlace debe empezar por https://": "The link must start with https://",
+    "Escribe el nombre de la actividad.": "Type the name of the activity.",
+    "Falta el nombre de la asociación en el perfil (paso Material).": "The association name is missing from the profile (Material step).",
+    "Escribe el correo de la asociación: lo necesita la cláusula de protección de datos.": "Type the association's email: the data protection notice needs it.",
+    "Formulario creado y enlace guardado. Pulsa «Crear toda la comunicación» para que salga en los textos; en las imágenes ya sale el QR.": "Form created and link saved. Press “Create all the communication” so it appears in the texts; the QR already appears in the images.",
+    "Formulario creado: el enlace ya está en tu campaña.": "Form created: the link is already in your campaign.",
     "title": "DifundIA · Communication for your patient association",
     "hero.eyebrow": "Communication for patient associations · ProPatiens Institute · UMH Patient Chair",
     "hero.h1": "Tell us your idea. <em>DifundIA prepares all the communication.</em>",
@@ -2140,6 +2245,32 @@ const I18N = {
     "Con el logo, los colores y el eslogan del perfil, la app dibuja la publicación cuadrada, la story, el cartel A4 y la cabecera del boletín (PNG), y maqueta el boletín y la nota de prensa (HTML y PDF). Todo se hace en este navegador, sin IA.": "With the logo, colours and tagline from the profile, the app draws the square post, the story, the A4 poster and the newsletter header (PNG), and lays out the newsletter and the press release (HTML and PDF). Everything happens in this browser, without AI."
   },
   "pt": {
+    "Correo de la asociación": "E-mail da associação",
+    "Dirección (sede)": "Morada (sede)",
+    "Calle…, localidad": "Rua…, localidade",
+    "Inscripción online (opcional)": "Inscrição online (opcional)",
+    "Si hace falta inscribirse, pega el enlace del formulario (Google Forms u otro). Saldrá en todas las publicaciones y como código QR en las imágenes y el cartel.": "Se for preciso inscrever-se, cole a ligação do formulário (Google Forms ou outro). Aparecerá em todas as publicações e como código QR nas imagens e no cartaz.",
+    "Enlace de inscripción": "Ligação de inscrição",
+    "¿Aún no tienes formulario? Créalo en Google en un minuto": "Ainda não tem formulário? Crie-o no Google num minuto",
+    "Trae las preguntas de inscripción, la cláusula de protección de datos y las autorizaciones de imagen y de comunicaciones. Se crea en tu cuenta de Google; la primera vez, Google te pedirá permiso.": "Traz as perguntas de inscrição, a cláusula de proteção de dados e as autorizações de imagem e de comunicações. É criado na sua conta Google; da primeira vez, o Google pedirá autorização.",
+    "Nombre de la actividad": "Nome da atividade",
+    "Taller de cocina para las fiestas": "Workshop de culinária para as festas",
+    "Día y hora": "Dia e hora",
+    "Sábado 12 de diciembre, de 10:30 a 13:30": "Sábado, 12 de dezembro, das 10:30 às 13:30",
+    "Lugar": "Local",
+    "Centro social, calle Mayor 22": "Centro social, rua Maior 22",
+    "Precio": "Preço",
+    "Gratuito para socios; 5 € para no socios": "Gratuito para sócios; 5 € para não sócios",
+    "Plazas": "Vagas",
+    "Inscripción abierta hasta": "Inscrições abertas até",
+    "Jueves 10 de diciembre": "Quinta-feira, 10 de dezembro",
+    "Crear mi formulario en Google": "Criar o meu formulário no Google",
+    "El enlace debe empezar por https://": "A ligação deve começar por https://",
+    "Escribe el nombre de la actividad.": "Escreva o nome da atividade.",
+    "Falta el nombre de la asociación en el perfil (paso Material).": "Falta o nome da associação no perfil (passo Material).",
+    "Escribe el correo de la asociación: lo necesita la cláusula de protección de datos.": "Escreva o e-mail da associação: é necessário para a cláusula de proteção de dados.",
+    "Formulario creado y enlace guardado. Pulsa «Crear toda la comunicación» para que salga en los textos; en las imágenes ya sale el QR.": "Formulário criado e ligação guardada. Prima «Criar toda a comunicação» para que apareça nos textos; nas imagens o QR já aparece.",
+    "Formulario creado: el enlace ya está en tu campaña.": "Formulário criado: a ligação já está na sua campanha.",
     "title": "DifundIA · A comunicação da sua associação de doentes",
     "hero.eyebrow": "Comunicação para associações de doentes · Instituto ProPatiens · Cátedra do Paciente UMH",
     "hero.h1": "Conte a sua ideia. <em>O DifundIA prepara toda a comunicação.</em>",
@@ -2490,6 +2621,8 @@ const PERFIL_CAMPOS = [   // [clave, etiqueta, tipo, ejemplo]
   ['ambito', 'Enfermedad o condición', 'text', 'Diabetes'],
   ['territorio', 'Territorio', 'text', 'Elche y comarca'],
   ['web', 'Web', 'text', 'https://…'],
+  ['email', 'Correo de la asociación', 'text', 'info@…'],
+  ['direccion', 'Dirección (sede)', 'text', 'Calle…, localidad'],
   ['mision', 'Misión', 'area', 'Acompañar a las personas con… y a sus familias'],
   ['publicos', 'Públicos', 'area', 'Pacientes y familias, profesionales sanitarios, medios locales'],
   ['tono', 'Tono', 'text', 'Cercano, positivo y sin tecnicismos'],
@@ -2525,7 +2658,7 @@ function cifraNorm(x) { const m = x.match(/^(\d{1,3}(?:[.,]\d{3})+)([.,]\d+)?$/)
 const cifrasDe = tx => new Set((String(tx).match(CIFRA_RX) || []).map(cifraNorm));
 function cifrasNuevas(texto, mat) { const m = cifrasDe(mat); return [...new Set((String(texto).match(CIFRA_RX) || []))].filter(x => { const n = cifraNorm(x); return !m.has(n) && parseFloat(n) > 12; }); }
 
-let S = {perfil: perfilVacio(), docs: [], idea: '', fecha: '', res: null, esEjemplo: false};
+let S = {perfil: perfilVacio(), docs: [], idea: '', fecha: '', inscripcion: '', act: {}, res: null, esEjemplo: false};
 let ENVIO_OK = false;
 /* datos personales: además de correo, DNI y teléfono (30-verify), el IBAN. Va primero para que el teléfono no se coma sus dígitos. */
 PII.unshift(['IBAN', /\b[A-Z]{2}\d{2}(?:\s?\d{4}){4,7}(?:\s?\d{1,4})?\b/g]);
@@ -2601,7 +2734,7 @@ const hoyISO = () => { const f = new Date(); return `${f.getFullYear()}-${String
 /* el material contra el que se comprueba: documentos, idea, perfil y la fecha en varios formatos */
 function materialDe(st = S) {
   const f = st.fecha ? (() => { const [y, m, d] = st.fecha.split('-'); return `${d} ${+d} ${m} ${+m} ${y}`; })() : '';
-  return [st.docs.map(d => d.texto).join('\n\n'), st.idea, JSON.stringify(perfilParaIA(st.perfil)), f].join('\n\n');
+  return [st.docs.map(d => d.texto).join('\n\n'), st.idea, st.inscripcion || '', JSON.stringify(perfilParaIA(st.perfil)), f].join('\n\n');
 }
 /* guarda DATOS (no frases traducidas): los avisos se redactan al pintar */
 function procesa(raw, st = S) {
@@ -2638,7 +2771,7 @@ window.addEventListener('langchange', () => { if (S.esEjemplo) { aplicaEjemplo()
 
 /* ── pantalla 0 ── */
 function pintaInicio() { $('inicioProj').innerHTML = S.res ? `${esc(t('Tienes una campaña guardada en este navegador.'))} <button class="btn btn-ghost btn-sm" id="btnCont" type="button">${esc(t('Verla'))}</button>` : ''; }
-$('btnStart').onclick = () => { if (S.esEjemplo) { S = {perfil: perfilVacio(), docs: [], idea: '', fecha: '', res: null, esEjemplo: false}; guarda(); } go(1); };
+$('btnStart').onclick = () => { if (S.esEjemplo) { S = {perfil: perfilVacio(), docs: [], idea: '', fecha: '', inscripcion: '', act: {}, res: null, esEjemplo: false}; guarda(); } go(1); };
 $('btnEjemplo').onclick = () => { aplicaEjemplo(); guarda(); go(3); toast(t('Ejemplo de demostración, sin usar la IA')); };
 document.addEventListener('click', e => { if (e.target.closest('#btnCont')) go(3); });
 
@@ -2695,7 +2828,44 @@ function bajaPerfil() { if (!perfilLleno()) return toast(t('El perfil está vac�
 $('btnBajaPerfil').onclick = bajaPerfil;
 
 /* ── pantalla 2: idea ── */
-function pintaIdea() { $('idea').value = S.idea; $('fecha').value = S.fecha; $('estado').textContent = ''; }
+function pintaIdea() { $('idea').value = S.idea; $('fecha').value = S.fecha; $('estado').textContent = ''; pintaInscripcion(); }
+
+/* ── inscripción online: se pega el enlace del formulario o se crea en Google con la aplicación web (FORM_APP) ──
+   La aplicación web se ejecuta con la cuenta de Google de quien la usa: el formulario y sus respuestas quedan en SU Drive.
+   Al terminar vuelve aquí con ?formulario=<enlace> (ver el arranque). Código: github.com/fborrasumh/propatiens, materiales/formulario_webapp */
+const FORM_APP = '';   // https://script.google.com/macros/s/…/exec · vacío = solo se puede pegar el enlace
+const ACT_CAMPOS = [['titulo', 'Nombre de la actividad', 'Taller de cocina para las fiestas'], ['cuando', 'Día y hora', 'Sábado 12 de diciembre, de 10:30 a 13:30'],
+  ['donde', 'Lugar', 'Centro social, calle Mayor 22'], ['precio', 'Precio', 'Gratuito para socios; 5 € para no socios'], ['plazas', 'Plazas', '20'], ['hasta', 'Inscripción abierta hasta', 'Jueves 10 de diciembre']];
+const esEnlace = u => /^https:\/\/\S+$/i.test(String(u || '').trim());
+function pintaInscripcion() {
+  const a = S.act || (S.act = {}), p = S.perfil;
+  if (!a.cuando && S.fecha) a.cuando = fechaLocal(S.fecha, {weekday: 'long', day: 'numeric', month: 'long'});
+  const campo = (id, lab, v, ph) => `<div class="field"><label for="${id}">${esc(t(lab))}</label><input type="text" id="${id}" value="${esc(v || '')}" placeholder="${esc(t(ph))}"></div>`;
+  $('inscCard').innerHTML = `<h3>${esc(t('Inscripción online (opcional)'))}</h3>
+    <p class="help">${esc(t('Si hace falta inscribirse, pega el enlace del formulario (Google Forms u otro). Saldrá en todas las publicaciones y como código QR en las imágenes y el cartel.'))}</p>
+    <div class="field"><label for="insc">${esc(t('Enlace de inscripción'))}</label><input type="text" id="insc" inputmode="url" value="${esc(S.inscripcion || '')}" placeholder="https://forms.gle/…"></div>
+    ${FORM_APP ? `<details class="fa-det"${S.inscripcion ? '' : ' open'}><summary>${esc(t('¿Aún no tienes formulario? Créalo en Google en un minuto'))}</summary>
+      <p class="help">${esc(t('Trae las preguntas de inscripción, la cláusula de protección de datos y las autorizaciones de imagen y de comunicaciones. Se crea en tu cuenta de Google; la primera vez, Google te pedirá permiso.'))}</p>
+      <div class="grid2">${ACT_CAMPOS.map(([k, l, ph]) => campo('act_' + k, l, a[k], ph)).join('')}
+      ${p.email ? '' : campo('act_email', 'Correo de la asociación', '', 'info@…')}${p.direccion ? '' : campo('act_direccion', 'Dirección (sede)', '', 'Calle…, localidad')}</div>
+      <div class="actions"><button class="btn btn-primary" id="btnCreaForm" type="button"><svg class="i"><use href="#i-form"/></svg><span>${esc(t('Crear mi formulario en Google'))}</span></button></div></details>` : ''}`;
+  $('insc').oninput = e => { S.inscripcion = e.target.value.trim(); S.esEjemplo = false; guarda(); };
+  $('insc').onchange = e => { if (e.target.value.trim() && !esEnlace(e.target.value)) toast(t('El enlace debe empezar por https://')); };
+  if (!FORM_APP) return;
+  ACT_CAMPOS.forEach(([k]) => $('act_' + k).oninput = e => { a[k] = e.target.value.trim(); guarda(); });
+  ['email', 'direccion'].forEach(k => { if ($('act_' + k)) $('act_' + k).oninput = e => { p[k] = e.target.value.trim(); guarda(); }; });
+  $('btnCreaForm').onclick = creaFormulario;
+}
+async function creaFormulario() {
+  const a = S.act || {}, p = S.perfil;
+  if (!a.titulo) return toast(t('Escribe el nombre de la actividad.'));
+  if (!p.nombre) return toast(t('Falta el nombre de la asociación en el perfil (paso Material).'));
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email || '')) return toast(t('Escribe el correo de la asociación: lo necesita la cláusula de protección de datos.'));
+  const d = {...a, resumen: S.idea.slice(0, 600), asociacion: p.nombre, direccion: p.direccion, correo: p.email, web: p.web, vuelta: location.origin + location.pathname};
+  const b64 = btoa(String.fromCharCode(...new TextEncoder().encode(JSON.stringify(d)))).replace(/\+/g, '-').replace(/\//g, '_');
+  S.esEjemplo = false; await guardaYa();
+  location.href = FORM_APP + '?d=' + b64;
+}
 $('idea').addEventListener('input', e => { S.idea = e.target.value; S.esEjemplo = false; guarda(); });
 $('fecha').addEventListener('change', e => { S.fecha = e.target.value; S.esEjemplo = false; guarda(); });
 
@@ -2735,6 +2905,8 @@ FECHA DEL ACONTECIMIENTO: ${S.fecha ? S.fecha + ' (' + fechaLocal(S.fecha, {week
 IDEA:
 ${idea}
 
+ENLACE DE INSCRIPCIÓN: ${S.inscripcion || 'no hay'}
+
 DOCUMENTOS:
 ${docs}
 ${previo ? `\nVERSIÓN ANTERIOR (JSON):\n${previo}\n\nCAMBIO QUE PIDEN: ${cambio}\nRehaz todas las piezas aplicando ese cambio.\n` : ''}
@@ -2745,6 +2917,7 @@ REGLAS
 - No des consejos clínicos individuales, dosis ni pautas de tratamiento.
 - Toda afirmación de salud (sobre la enfermedad, riesgos, tratamientos o beneficios) debe apoyarse en los documentos o en una fuente aprobada del perfil, y se lista en "afirmaciones".
 - Enlaces: solo la web y las redes del perfil, sus fuentes aprobadas o los que aparezcan en la idea o los documentos.
+- Si hay ENLACE DE INSCRIPCIÓN, cópialo tal cual, sin cambiarlo ni acortarlo, como forma de inscribirse en redes, corto, whatsapp, boletin, web, prensa y claro. En el cartel, "accion" invita a inscribirse (la app añade un código QR con el enlace).
 - Hashtags: los del perfil y, como mucho, dos más relacionados.
 
 PIEZAS
@@ -2857,7 +3030,14 @@ const CAN_NEXT = i => i === 2 && !S.res ? t('Pulsa «Crear toda la comunicación
 /* ── arranque ── */
 (async () => {
   const p = await cargaEstado(); if (p) S = {...S, ...p, perfil: perfilLimpio(p.perfil), docs: Array.isArray(p.docs) ? p.docs : []};
-  iniciaUI(); if (S.esEjemplo) aplicaEjemplo(); go(0);
+  iniciaUI(); if (S.esEjemplo) aplicaEjemplo();
+  const vuelto = new URLSearchParams(location.search).get('formulario');
+  if (vuelto) {
+    const u = new URL(location.href); u.searchParams.delete('formulario'); history.replaceState(null, '', u.pathname + u.search + u.hash);
+    if (esEnlace(vuelto)) { S.inscripcion = vuelto.trim(); S.esEjemplo = false; await guardaYa(); go(2);
+      return toast(S.res ? t('Formulario creado y enlace guardado. Pulsa «Crear toda la comunicación» para que salga en los textos; en las imágenes ya sale el QR.') : t('Formulario creado: el enlace ya está en tu campaña.'), 9000); }
+  }
+  go(0);
 })();
 
 /* ══ Diseños listos para publicar, con el kit de marca del perfil (logo, dos colores, eslogan).
@@ -2919,6 +3099,63 @@ async function ponLogo(x, M, X, Y, alto, maxW, color) {
   if (im) { const k = alto / im.height, w = Math.min(maxW, im.width * k), h = im.height * (w / im.width), pad = alto * .22; redondo(x, X, Y, w + pad * 2, h + pad * 2, (h + pad * 2) * .28, '#FFFFFF'); x.drawImage(im, X + pad, Y + pad, w, h); return {y: Y + h + pad * 2, x2: X + w + pad * 2}; }
   const b = encaja(x, M.nombre, maxW, 2, Math.round(alto * .42), Math.round(alto * .28), 700); return {y: escribe(x, b, X, Y, color, 700, 1.15), x2: X};
 }
+/* QR sin librerías (modo byte, corrección M, versiones 1-10: enlaces de hasta ~210 caracteres). Adaptado del generador de Nayuki (MIT).
+   qrMatriz(texto) → {n, m} con m[y][x] = true si el módulo es oscuro. */
+function qrMatriz(texto) {
+  const dat = [...new TextEncoder().encode(texto)], ECC = [0, 10, 16, 26, 18, 24, 16, 18, 22, 22, 26], BLQ = [0, 1, 1, 1, 2, 2, 4, 4, 4, 5, 5];
+  const brutos = v => { let r = (16 * v + 128) * v + 64; if (v >= 2) { const a = Math.floor(v / 7) + 2; r -= (25 * a - 10) * a - 55; if (v >= 7) r -= 36; } return r; };
+  const utiles = v => Math.floor(brutos(v) / 8) - ECC[v] * BLQ[v];
+  let v = 1; while (v <= 10 && 4 + (v < 10 ? 8 : 16) + dat.length * 8 > utiles(v) * 8) v++;
+  if (v > 10) throw new Error('Enlace demasiado largo para el código QR');
+  const bits = [], pon = (x, n) => { for (let i = n - 1; i >= 0; i--) bits.push((x >>> i) & 1); }, cap = utiles(v) * 8;
+  pon(4, 4); pon(dat.length, v < 10 ? 8 : 16); dat.forEach(b => pon(b, 8));
+  pon(0, Math.min(4, cap - bits.length)); pon(0, (8 - bits.length % 8) % 8);
+  for (let p = 0xEC; bits.length < cap; p ^= 0xEC ^ 0x11) pon(p, 8);
+  const cw = []; for (let i = 0; i < bits.length; i += 8) cw.push(bits.slice(i, i + 8).reduce((a, b) => a << 1 | b, 0));
+  /* Reed-Solomon */
+  const mul = (x, y) => { let z = 0; for (let i = 7; i >= 0; i--) { z = (z << 1) ^ ((z >>> 7) * 0x11D); z ^= ((y >>> i) & 1) * x; } return z; };
+  const e = ECC[v], div = Array(e).fill(0); div[e - 1] = 1;
+  for (let i = 0, r = 1; i < e; i++) { for (let j = 0; j < e; j++) { div[j] = mul(div[j], r); if (j + 1 < e) div[j] ^= div[j + 1]; } r = mul(r, 2); }
+  const resto = d => { const r = Array(e).fill(0); for (const b of d) { const f = b ^ r.shift(); r.push(0); div.forEach((c, i) => r[i] ^= mul(c, f)); } return r; };
+  const nb = BLQ[v], tot = Math.floor(brutos(v) / 8), cortos = nb - tot % nb, lc = Math.floor(tot / nb), bloques = [];
+  for (let i = 0, k = 0; i < nb; i++) { const d = cw.slice(k, k + lc - e + (i < cortos ? 0 : 1)); k += d.length; const r = resto(d); if (i < cortos) d.push(0); bloques.push(d.concat(r)); }
+  const fin = []; for (let i = 0; i < bloques[0].length; i++) bloques.forEach((b, j) => { if (i !== lc - e || j >= cortos) fin.push(b[i]); });
+  /* matriz y patrones fijos */
+  const n = v * 4 + 17, m = Array.from({length: n}, () => Array(n).fill(false)), fijo = Array.from({length: n}, () => Array(n).fill(false));
+  const f = (x, y, o) => { m[y][x] = o; fijo[y][x] = true; };
+  for (let i = 0; i < n; i++) { f(6, i, i % 2 === 0); f(i, 6, i % 2 === 0); }
+  for (const [cx, cy] of [[3, 3], [n - 4, 3], [3, n - 4]]) for (let dy = -4; dy <= 4; dy++) for (let dx = -4; dx <= 4; dx++) { const d = Math.max(Math.abs(dx), Math.abs(dy)), x = cx + dx, y = cy + dy; if (x >= 0 && x < n && y >= 0 && y < n) f(x, y, d !== 2 && d !== 4); }
+  if (v > 1) {
+    const a = Math.floor(v / 7) + 2, paso = Math.ceil((v * 4 + 4) / (a * 2 - 2)) * 2, pos = [6]; for (let p = n - 7; pos.length < a; p -= paso) pos.splice(1, 0, p);
+    pos.forEach((px, i) => pos.forEach((py, j) => { if ((i === 0 && j === 0) || (i === 0 && j === a - 1) || (i === a - 1 && j === 0)) return; for (let dy = -2; dy <= 2; dy++) for (let dx = -2; dx <= 2; dx++) f(px + dx, py + dy, Math.max(Math.abs(dx), Math.abs(dy)) !== 1); }));
+  }
+  const formato = mask => { const d = mask; let r = d; for (let i = 0; i < 10; i++) r = (r << 1) ^ ((r >>> 9) * 0x537); const b = ((d << 10) | r) ^ 0x5412, g = i => ((b >>> i) & 1) === 1;   // M = 0
+    for (let i = 0; i <= 5; i++) f(8, i, g(i)); f(8, 7, g(6)); f(8, 8, g(7)); f(7, 8, g(8)); for (let i = 9; i < 15; i++) f(14 - i, 8, g(i));
+    for (let i = 0; i < 8; i++) f(n - 1 - i, 8, g(i)); for (let i = 8; i < 15; i++) f(8, n - 15 + i, g(i)); f(8, n - 8, true); };
+  formato(0);
+  if (v >= 7) { let r = v; for (let i = 0; i < 12; i++) r = (r << 1) ^ ((r >>> 11) * 0x1F25); const b = (v << 12) | r; for (let i = 0; i < 18; i++) { const o = ((b >>> i) & 1) === 1, a = n - 11 + i % 3, c = Math.floor(i / 3); f(a, c, o); f(c, a, o); } }
+  /* datos en zigzag */
+  for (let der = n - 1, i = 0; der >= 1; der -= 2) { if (der === 6) der = 5; for (let vt = 0; vt < n; vt++) for (let j = 0; j < 2; j++) { const x = der - j, y = ((der + 1) & 2) === 0 ? n - 1 - vt : vt; if (!fijo[y][x] && i < fin.length * 8) { m[y][x] = ((fin[i >>> 3] >>> (7 - (i & 7))) & 1) === 1; i++; } } }
+  /* máscara: la de menor penalización (rachas, bloques 2×2 y equilibrio) */
+  const CONDS = [(x, y) => (x + y) % 2 === 0, (x, y) => y % 2 === 0, x => x % 3 === 0, (x, y) => (x + y) % 3 === 0, (x, y) => (Math.floor(x / 3) + Math.floor(y / 2)) % 2 === 0,
+    (x, y) => x * y % 2 + x * y % 3 === 0, (x, y) => (x * y % 2 + x * y % 3) % 2 === 0, (x, y) => ((x + y) % 2 + x * y % 3) % 2 === 0];
+  const aplica = k => { for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (!fijo[y][x] && CONDS[k](x, y)) m[y][x] = !m[y][x]; };
+  const pena = () => { let p = 0, os = 0;
+    for (let y = 0; y < n; y++) for (const lin of [i => m[y][i], i => m[i][y]]) { let c = 1; for (let i = 1; i <= n; i++) { if (i < n && lin(i) === lin(i - 1)) c++; else { if (c >= 5) p += c - 2; c = 1; } } }
+    for (let y = 0; y < n - 1; y++) for (let x = 0; x < n - 1; x++) { const c = m[y][x]; if (c === m[y][x + 1] && c === m[y + 1][x] && c === m[y + 1][x + 1]) p += 3; }
+    m.forEach(r => r.forEach(c => { if (c) os++; })); return p + Math.floor(Math.abs(os * 20 - n * n * 10) / (n * n)) * 10; };
+  let mejor = 0, minP = Infinity;
+  for (let k = 0; k < 8; k++) { aplica(k); formato(k); const p = pena(); if (p < minP) { minP = p; mejor = k; } aplica(k); }
+  aplica(mejor); formato(mejor);
+  return {n, m};
+}
+/* QR sobre una tarjeta blanca redondeada, con margen de 4 módulos */
+function dibujaQR(x, texto, X, Y, lado) {
+  const {n, m} = qrMatriz(texto), u = lado / (n + 8);
+  x.fillStyle = '#FFFFFF'; x.beginPath(); x.roundRect(X, Y, lado, lado, u * 3); x.fill();
+  x.fillStyle = '#111111';
+  for (let y = 0; y < n; y++) for (let i = 0; i < n; i++) if (m[y][i]) x.fillRect(Math.floor(X + (i + 4) * u), Math.floor(Y + (y + 4) * u), Math.ceil(u), Math.ceil(u));
+}
 async function lienzo(f) {
   await cargaFuentes();
   const F = FMT[f], M = marca(), C = cartelDe(), cv = document.createElement('canvas'); cv.width = F.w; cv.height = F.h;
@@ -2943,7 +3180,9 @@ async function lienzo(f) {
     y = escribe(x, encaja(x, C.titulo, mw, 4, 120, 64, 700), pad, y, oscuro, 700, 1.1) + 30;
     if (C.subtitulo) y = escribe(x, encaja(x, C.subtitulo, mw, 3, 52, 36, 500), pad, y, '#3D4A5C', 500, 1.3) + 50;
     for (const v of [C.cuando, C.donde]) { if (!v) continue; x.fillStyle = M.c2; x.fillRect(pad, y + 8, 14, 52); y = escribe(x, encaja(x, v, mw - 40, 2, 50, 34, 500), pad + 40, y, '#14213D', 500, 1.25) + 26; }
-    if (C.accion) { const b = encaja(x, C.accion, mw - 120, 1, 54, 34, 700); x.font = `700 ${b.t}px ${FAM}`; const w = x.measureText(b.lin[0]).width + 120; redondo(x, pad, H - 420, w, b.t + 70, (b.t + 70) / 2, M.c2); escribe(x, b, pad + 60, H - 420 + 35, on2, 700); }
+    const qrA4 = esEnlace(S.inscripcion) ? 330 : 0;
+    if (qrA4) { redondo(x, W - pad - qrA4 - 12, H - 190 - qrA4 - 52, qrA4 + 24, qrA4 + 24, 30, M.c1); dibujaQR(x, S.inscripcion.trim(), W - pad - qrA4, H - 190 - qrA4 - 40, qrA4); }
+    if (C.accion) { const b = encaja(x, C.accion, mw - 120 - (qrA4 ? qrA4 + 40 : 0), 1, 54, 34, 700); x.font = `700 ${b.t}px ${FAM}`; const w = x.measureText(b.lin[0]).width + 120; redondo(x, pad, H - 420, w, b.t + 70, (b.t + 70) / 2, M.c2); escribe(x, b, pad + 60, H - 420 + 35, on2, 700); }
     x.fillStyle = M.c1; x.fillRect(0, H - 190, W, 190);
     escribe(x, encaja(x, [M.web, M.eslogan].filter(Boolean).join(' · ') || M.nombre, W - 200, 2, 40, 26, 500), pad, H - 125, on1, 500);
     return cv;
@@ -2958,9 +3197,10 @@ async function lienzo(f) {
   y = escribe(x, encaja(x, C.titulo, mw, story ? 5 : 3, story ? 128 : 100, story ? 70 : 56, 700), pad, y, on1, 700, 1.08) + (story ? 44 : 26);
   if (C.subtitulo) y = escribe(x, encaja(x, C.subtitulo, mw, 3, story ? 52 : 42, story ? 36 : 30, 500), pad, y, on1, 500, 1.3) + (story ? 60 : 30);
   for (const v of [C.cuando, C.donde]) { if (!v) continue; x.fillStyle = M.c2; x.fillRect(pad, y + 6, 10, story ? 52 : 40); y = escribe(x, encaja(x, v, mw - 34, 2, story ? 50 : 38, story ? 34 : 28, 500), pad + 32, y, on1, 500, 1.25) + (story ? 22 : 14); }
-  const yb = H - (story ? 330 : 190);
-  if (C.accion) { const b = encaja(x, C.accion, mw - 110, 1, story ? 54 : 42, 30, 700); x.font = `700 ${b.t}px ${FAM}`; const w = x.measureText(b.lin[0]).width + 110, h = b.t + (story ? 64 : 52); redondo(x, pad, yb, w, h, h / 2, M.c2); escribe(x, b, pad + 55, yb + (h - b.t) / 2, on2, 700); }
-  if (M.web) { x.globalAlpha = .85; escribe(x, encaja(x, M.web, mw, 1, story ? 38 : 30, 22, 500), pad, H - (story ? 150 : 82), on1, 500); x.globalAlpha = 1; }
+  const yb = H - (story ? 330 : 190), qr = esEnlace(S.inscripcion) ? (story ? 300 : 200) : 0, mwq = mw - (qr ? qr + 30 : 0);
+  if (qr) dibujaQR(x, S.inscripcion.trim(), W - pad - qr, H - pad - qr + (story ? -40 : 20), qr);
+  if (C.accion) { const b = encaja(x, C.accion, mwq - 110, 1, story ? 54 : 42, 30, 700); x.font = `700 ${b.t}px ${FAM}`; const w = x.measureText(b.lin[0]).width + 110, h = b.t + (story ? 64 : 52); redondo(x, pad, yb, w, h, h / 2, M.c2); escribe(x, b, pad + 55, yb + (h - b.t) / 2, on2, 700); }
+  if (M.web) { x.globalAlpha = .85; escribe(x, encaja(x, M.web, mwq, 1, story ? 38 : 30, 22, 500), pad, H - (story ? 150 : 82), on1, 500); x.globalAlpha = 1; }
   return cv;
 }
 async function bajaPNG(f) { const cv = await lienzo(f); cv.toBlob(b => dl(`${slug(marca().nombre)}-${f}.png`, b), 'image/png'); }
